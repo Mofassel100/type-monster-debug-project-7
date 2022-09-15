@@ -181,6 +181,7 @@ button {
   position: fixed;
   top: 0;
 }
+/* min width responsive */
 @media only screen and (min-width: 720px) {
   .box-container {
     padding: 0 20px;
@@ -193,7 +194,7 @@ button {
   }
 }
 
-
+/* max width responsive */
 @media only screen and (max-width: 700px) {
   .box-container {
     padding: 0 20px;
