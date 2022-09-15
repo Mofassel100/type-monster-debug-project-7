@@ -87,7 +87,7 @@ const gameOver = () => {
   `;
 
   addHistory(questionText, timeTaken, errorCount);
-  console.log(errorCount)
+  
 
   // restart everything
   startTime = null;
