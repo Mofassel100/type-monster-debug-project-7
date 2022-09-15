@@ -23,10 +23,12 @@ fetch("./texts.json")
 const typeController = (e) => {
   
   const newLetter = e.key;
+  
 
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    
     return display.removeChild(display.lastChild);
   }
 
@@ -35,7 +37,9 @@ const typeController = (e) => {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
 
   // if it is not a valid character like Control/Alt then skip displaying anything
-  if (!validLetters.includes(newLetter)) {
+  if (!validLetters.includes(newLetter))
+   {
+    console.log(newLetter)
     return;
   }
 
@@ -56,7 +60,10 @@ const typeController = (e) => {
 };
 
 const validate = (key) => {
+  console.log(key)
+  
   if (key === questionText[userText.length - 1]) {
+    
     return true;
   }
   return false;
@@ -86,12 +93,12 @@ const gameOver = () => {
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, errorCount );
   
 
   // restart everything
   startTime = null;
-  errorCount = 0;
+  errorCount = 0 ;
   userText = "";
   display.classList.add("inactive");
 };

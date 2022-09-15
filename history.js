@@ -1,7 +1,7 @@
 const histories = document.getElementById("histories");
 
 function addHistory(questionText, timeTaken, errorCount) {
-  cons
+  
   const newRow = document.createElement("div");
   newRow.classList.add("card");
 
@@ -31,6 +31,7 @@ function displayHistory() {
   previousTests.forEach((test) => {
     const newRow = document.createElement("div");
     newRow.classList.add("card");
+    console.log(test)
 
     newRow.innerHTML = `
   <h3>${test.questionText}</h3>
