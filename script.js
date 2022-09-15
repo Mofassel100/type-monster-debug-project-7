@@ -39,7 +39,7 @@ const typeController = (e) => {
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter))
    {
-    console.log(newLetter)
+    
     return;
   }
 
@@ -50,7 +50,7 @@ const typeController = (e) => {
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
-    display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : errorCount++}</span>`;
   }
 
   // check if given question text is equal to user typed text
@@ -60,7 +60,7 @@ const typeController = (e) => {
 };
 
 const validate = (key) => {
-  console.log(key)
+  
   
   if (key === questionText[userText.length - 1]) {
     
@@ -99,6 +99,7 @@ const gameOver = () => {
   // restart everything
   startTime = null;
   errorCount = 0 ;
+  
   userText = "";
   display.classList.add("inactive");
 };
